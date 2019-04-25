@@ -25,13 +25,14 @@ void SELLER::sell(int sitemnum, MER* A)//ÆÈ±â µ·+ °³¼ö- //ÆÈ·Á´Â ¾ç, ÆÈ·Á´Â »óÀÎ
 	else
 	{
 		S_money += sitemnum * A->itemprice;
-		S_money -= (sitemnum * A->itemprice) / 10;
 		S_itemnum -= sitemnum;
+		price = A->itemprice;
+
 		A->money -= sitemnum * A->itemprice;
 		A->itemnum += sitemnum;
-		A->tax += (sitemnum * A->itemprice) / 10;
-		price = A->itemprice;
-		cout << "ÆÇ¸Å" << endl;
+
+
+		cout << sitemnum << "°³ ÆÇ¸Å" << endl;
 		cout << "-----------------" << endl;
 	}
 }

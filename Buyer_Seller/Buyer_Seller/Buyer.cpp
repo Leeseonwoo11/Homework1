@@ -7,6 +7,8 @@
 #include <algorithm>
 
 
+
+
 using namespace std;
 
 BUYER::BUYER() {}
@@ -23,16 +25,19 @@ BUYER::BUYER(unsigned int b_money, unsigned int b_itemnum) :B_money(b_money), B_
 void BUYER::buy(int bitemnum, MER *A)// 사기 돈- 개수+  //사려는양,사려는 상인,
 {
 	if (A->itemnum < bitemnum) { cout << "물건 개수가 모자라 못사" << endl; }
-	else if (B_money < bitemnum * A->itemprice) { cout << "돈이모자라" << endl; }
+	else if (B_money < bitemnum * A->itemprice)
+	{ cout << "돈이모자라" << endl; }
 	else
 	{
 		B_money -= bitemnum * A->itemprice;
-
 		B_itemnum += bitemnum;
+		price = A->itemprice;
+
+		
 		A->money += bitemnum * A->itemprice;
 		A->itemnum -= bitemnum;
-		price = A->itemprice;
-		cout << "구매" << endl;
+
+		cout << bitemnum <<"개 구매" << endl;
 		cout << "-----------------" << endl;
 	}
 }

@@ -5,10 +5,16 @@
 #include <vector>
 #include <algorithm>
 
+enum class sayul
+{
+	per = 10,
+};
+
+
+
 class MER//상인 클래스
 {
 public:
-	int tax = 0;
 	int money = 0;
 	int itemprice = 0;
 	int itemnum = 0;

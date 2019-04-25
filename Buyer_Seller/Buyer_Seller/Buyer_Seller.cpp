@@ -21,24 +21,22 @@ int main()
 	BUYER *B = new BUYER(4000, 2000);
 
 	int i = 0;
-	int a, b;
-	while (i < 10)
+	int a=0, b=0;
+	while (i < 100)
 	{
+		cout << "???????????????????????????????" << endl;
 		C->info();
-
 		A->info();
-		cin >> a;	
+		B->info();
+
+			
 		A->sell(a, C);
-
-
-		B->info();
-		cin >> b;
 		B->buy(b, C);
-
-		C->info();
-		A->info();
-		B->info();
 		i++;
+		a++;
+		b++;
+	
+		
 	}
 
 

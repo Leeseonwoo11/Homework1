@@ -29,7 +29,6 @@ void MER::info()
 	cout << "돈:" << MONEY() << endl;
 	cout << "아이템개수" << ITEMNUM() << endl;
 	cout << "아이템가격" << PRICE() << endl;
-	cout << "세금: " << tax << endl;
 	cout << "-----------------" << endl;
 
 }
