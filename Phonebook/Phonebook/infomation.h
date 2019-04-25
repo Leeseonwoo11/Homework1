@@ -9,10 +9,16 @@ class infomation
 
 public:
 
+	string Name = "";
 	string Phonenumber = "";
 	string Address = "";
 	string EmailAddress = "";
 	string Job = "";
+
+	string GetName()
+	{
+		return Name;
+	}
 
 	string GetPhoneNumber()
 	{
@@ -32,7 +38,7 @@ public:
 	}
 
 
-	void injection(string num, string addr, string eaddr, string joob);
+	void injection(string name,string num, string addr, string eaddr, string joob);
 	void info();
 
 };

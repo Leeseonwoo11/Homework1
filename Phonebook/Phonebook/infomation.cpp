@@ -2,24 +2,27 @@
 #include "infomation.h"
 using namespace std;
 
-infomation::infomation(){}
 
-void infomation::injection(string num, string addr, string eaddr, string joob)
+
+void infomation::injection(string name,string num, string addr, string eaddr, string joob)
 {
-	Phonenumber;
-	Address;
-	EmailAddress;
-	Job;
+	Name = name;
+	Phonenumber= num;
+	Address= addr;
+	EmailAddress= eaddr;
+	Job=joob;
 
 }
 
 void infomation::info()
 {
-
-	cout << GetPhoneNumber() << endl;
-	cout<<GetAddress() <<endl;
-	cout<<GetEmailAdress() <<endl;
-	cout << Getjob() << endl;
+	cout <<"이름: "<<GetName() << endl;
+	cout <<"전호번호: "<<GetPhoneNumber() << endl;
+	cout<<"주소: " <<GetAddress() <<endl;
+	cout<<"이메일: "<<GetEmailAdress() <<endl;
+	cout <<"직업: " << Getjob() << endl;
+	cout << "--------------------" << endl;
+	cout << endl;
 
 }
 
