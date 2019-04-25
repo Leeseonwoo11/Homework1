@@ -16,8 +16,8 @@ public:
 	void buy(int bitemnum, MER *A);
 
 	virtual const char* Name() override { return "구매자"; }
-	virtual int MONEY() override { return B_money; }
-	virtual int ITEMNUM() { return B_itemnum; }
-	virtual int PRICE() override { return price; }
+	virtual int MONEY() override { return B_money; }//바이어 돈 리턴
+	virtual int ITEMNUM() { return B_itemnum; }// 바이어 개수 리턴
+	virtual int PRICE() override { return price; }// 가격리턴
 
 };

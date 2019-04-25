@@ -16,22 +16,22 @@ int main()
 {
 
 	using namespace std;
-	MER *C = new MER(10000, 10, 10000);
-	SELLER *A = new SELLER(1000, 1000);
-	BUYER *B = new BUYER(4000, 2000);
+	MER *C = new MER(10000, 10, 10000);// 상인 : 재산:10000원, 가격:개당10원,  재고 10000개
+	SELLER *A = new SELLER(1000, 1000);// 셀러 : 재산:1000원, 재고: 1000개
+	BUYER *B = new BUYER(4000, 20);// 바이어 : 재산 4000원, 재고 20개
 
 	int i = 0;
 	int a=0, b=0;
 	while (i < 100)
 	{
-		cout << "???????????????????????????????" << endl;
+		cout << "-----------------------------" << endl;
 		C->info();
 		A->info();
 		B->info();
 
 			
-		A->sell(a, C);
-		B->buy(b, C);
+		A->sell(a, C); // 셀러  A가 상인 C에게 a개 판다.
+		B->buy(b, C); //  바이어 B가 상인 C에게 b개 산다.
 		i++;
 		a++;
 		b++;
@@ -44,8 +44,8 @@ int main()
 
 
 
-	delete[] A;
-	delete[] B;
-	delete[] C;
+	delete[] A;//메모리 삭제
+	delete[] B;//메모리 삭제
+	delete[] C;//메모리 삭제
 
 }

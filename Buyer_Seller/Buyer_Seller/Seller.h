@@ -13,9 +13,9 @@ public:
 	int price = 0;
 	SELLER(unsigned int s_money, unsigned  int s_itemnum);
 	virtual const char* Name() override { return "판매자"; }
-	virtual int MONEY() override { return S_money; }
-	virtual int ITEMNUM() { return S_itemnum; }
-	virtual int PRICE()override { return price; }
+	virtual int MONEY() override { return S_money; }//셀러돈 리턴
+	virtual int ITEMNUM() { return S_itemnum; }//셀러개수리턴
+	virtual int PRICE()override { return price; }//가격리턴
 	void sell(int sitemnum, MER* A);
 
 

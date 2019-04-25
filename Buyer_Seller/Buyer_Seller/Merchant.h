@@ -29,7 +29,7 @@ public:
 		MER MYMER(a, b, c);
 		return MYMER;
 	}
-	MER& operator +=(MER A) //상속받은 애들도 쓰고싶은데? 되나?
+	MER& operator +=(MER A) 
 	{
 		money += A.money;
 		itemprice = A.itemprice;
