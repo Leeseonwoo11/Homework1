@@ -11,12 +11,32 @@ int main()
 
 	std::vector<infomation> A;
 	
-	AddPhoneNumver(A);
-	Open_all_number(A);
-	RivisePhoneNumber(A);
-	Open_all_number(A);
+
+	while (1)
+	{
+		int aaa = menu();
+		switch (aaa)
+		{
+		case 1:
+			AddPhoneNumver(A);
+			break;
+		case 2:
+			SearchTool(A);
+			break;
+		case 3:
+			RivisePhoneNumber(A);
+			break;
+		case 4:
+			Open_all_number(A);
+			break;
+		case 5:
+			goto endloop;
+		break;
 
 
+		}
+	}
+endloop:;
 
 }
 

@@ -11,6 +11,7 @@ int menu()
 	std::cout << "2. 전화번호찾기" << std::endl; //searchName or searchNumber.
 	std::cout << "3. 전화번호부 수정" << std::endl; //
 	std::cout << "4. 전화번호부 목록" << std::endl; //info
+	std::cout << "5. 나가기" << std::endl; //exit
 	int n;
 	cin >> n;
 	return n;
@@ -106,4 +107,33 @@ void Open_all_number(std::vector<infomation> &phonebook)
 	{
 		phonebook[i].info();
 	}
+}
+
+
+void SearchTool(std::vector<infomation> &phonebok)
+{
+	int i;
+	int bb;
+	string name;
+	string number;
+	
+	cout << "1. 이름으로찾기" << endl;
+	cout<< "2. 번호로찾기" << endl;
+	cin >> i;
+
+	if (i == 1)
+	{
+		cout << "이름을 입력하세요" << endl;
+		cin >> name;
+		bb=SearchName(name, phonebok);
+		phonebok[bb].info();
+	}
+	else if (i == 2)
+	{
+		cout << "번호를 입력하세요" << endl;
+		cin >> number;
+		bb = SearchNumber(number, phonebok);
+		phonebok[bb].info();
+	}
+
 }
