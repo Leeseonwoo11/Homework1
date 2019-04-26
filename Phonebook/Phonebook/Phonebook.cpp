@@ -17,19 +17,19 @@ int main()
 		int aaa = menu();
 		switch (aaa)
 		{
-		case 1:
+		case 1: //전화번호 추가
 			AddPhoneNumver(A);
 			break;
-		case 2:
+		case 2: //전화번호 찾기
 			SearchTool(A);
 			break;
-		case 3:
+		case 3: //전화번호 수정하기
 			RivisePhoneNumber(A);
 			break;
-		case 4:
+		case 4: //전화번호부 목록 모두 열기
 			Open_all_number(A);
 			break;
-		case 5:
+		case 5: //나가기
 			goto endloop;
 		break;
 
@@ -37,6 +37,9 @@ int main()
 		}
 	}
 endloop:;
+
+
+
 
 }
 

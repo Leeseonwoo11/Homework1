@@ -12,9 +12,28 @@ int menu()
 	std::cout << "3. 전화번호부 수정" << std::endl; //
 	std::cout << "4. 전화번호부 목록" << std::endl; //info
 	std::cout << "5. 나가기" << std::endl; //exit
-	int n;
-	cin >> n;
-	return n;
+
+
+	while (1)
+	{
+		int n = 0;
+
+		cin >> n;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+
+		if (n > 0 && n < 6)
+		{
+			return n;
+		}
+		else
+		{
+			cout << "다시 입력하세요" << endl;
+		}
+	}
 }
 
 
