@@ -1,45 +1,96 @@
-ï»¿// Phonebook.cpp : ì´ íŒŒì¼ì—ëŠ” 'main' í•¨ìˆ˜ê°€ í¬í•¨ë©ë‹ˆë‹¤. ê±°ê¸°ì„œ í”„ë¡œê·¸ë¨ ì‹¤í–‰ì´ ì‹œì‘ë˜ê³  ì¢…ë£Œë©ë‹ˆë‹¤.
-//
-
 #include "pch.h"
-#include "infomation.h"
-#include <iostream>
-#include "background.h"
+#include "PhoneBook.h"
 
-int main()
+
+
+
+PhoneBook::PhoneBook(std::string a_name)
 {
-
-	std::vector<infomation> A;
-	
-
-	while (1)
-	{
-		int aaa = menu();
-		switch (aaa)
-		{
-		case 1: //ì „í™”ë²ˆí˜¸ ì¶”ê°€
-			AddPhoneNumver(A);
-			break;
-		case 2: //ì „í™”ë²ˆí˜¸ ì°¾ê¸°
-			SearchTool(A);
-			break;
-		case 3: //ì „í™”ë²ˆí˜¸ ìˆ˜ì •í•˜ê¸°
-			RivisePhoneNumber(A);
-			break;
-		case 4: //ì „í™”ë²ˆí˜¸ë¶€ ëª©ë¡ ëª¨ë‘ ì—´ê¸°
-			Open_all_number(A);
-			break;
-		case 5: //ë‚˜ê°€ê¸°
-			goto endloop;
-		break;
-
-
-		}
-	}
-endloop:;
-
-
-
-
+	m_Data.m_strName = a_name;
 }
 
+PhoneBook::~PhoneBook()
+{
+}
+
+
+void PhoneBook::SetAge()
+{
+	std::cout << "³ªÀÌ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä. " << std::endl;
+	int tmp = 0;
+	while (true)
+	{
+		std::cin >> tmp;
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+			std::cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½ÃÀÔ·ÂÇØÁÖ¼¼¿ä" << std::endl;
+
+		}
+		else 
+		{
+			m_Data.m_nAge = tmp;
+			break;
+		}
+	}
+}
+
+void PhoneBook::SetGender()
+{
+	while (true)
+	{
+		std::cout << "³²¼ºÀº 1, ¿©¼ºÀº 2¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." << std::endl;
+		char a;
+		std::cin >> a;
+		switch (a)
+		{
+		case '1': {m_Data.m_Gender = eGender::Male; return; }break;
+		case '2': {m_Data.m_Gender = eGender::Female; return; }break;
+		default:
+			std::cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä." << std::endl;
+			break;
+		}
+	}
+}
+
+void PhoneBook::SetNumer()
+{
+	std::string strNumber = "";
+	std::cout << "¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." << std::endl;
+	std::cin >> strNumber;
+	m_Data.m_strNumber = strNumber;
+}
+
+void PhoneBook::info() const
+{
+	std::cout << "=======================================" << std::endl;
+	std::cout << "ÀÌ¸§ : " << m_Data.m_strName << std::endl;
+	std::cout << "ÀüÈ­¹øÈ£ : " << m_Data.m_strNumber << std::endl;
+	std::cout << "³ªÀÌ : " << m_Data.m_nAge << std::endl;
+	ShowGender();
+	std::cout << "=======================================" << std::endl;
+	std::cout << std::endl;
+}
+
+void PhoneBook::ShowGender() const
+{
+	if ((int)m_Data.m_Gender % 2)
+	{
+		std::cout << "¼ºº° : ³²¼º " << std::endl;
+	}
+	else
+	{
+		std::cout << "¼ºº° : ¿©¼º " << std::endl;
+	}
+}
+
+void PhoneBook::SetTest(std::string a_Name, std::string a_Number)
+{
+	m_Data.m_strName = a_Name;
+	m_Data.m_Gender = eGender::Male;
+	m_Data.m_nAge = 20;
+	m_Data.m_strNumber = a_Number;
+}
+	
+	

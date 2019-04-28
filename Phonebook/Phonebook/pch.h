@@ -9,6 +9,18 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+#include <cassert>
+#include "Defien.h"
+#include "PhonebookMng.h"
 // TODO: 여기에 미리 컴파일하려는 헤더 추가
+
+#include "infomation.h"
+#include "background.h"
+#include "PhoneBook.h"
+
 
 #endif //PCH_H

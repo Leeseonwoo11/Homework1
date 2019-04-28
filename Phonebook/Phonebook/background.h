@@ -1,10 +1,6 @@
 #pragma once
-#include "infomation.h"
-#include <iostream>
-#include <string>
-#include <vector>
 
-
+/*
 int menu()
 {
 	std::cout << "1. 전화번호추가" << std::endl; //addphonenumver
@@ -156,3 +152,4 @@ void SearchTool(std::vector<infomation> &phonebok)
 	}
 
 }
+*/
