@@ -2,10 +2,8 @@
 //
 
 #include "pch.h"
-#include <iostream>
-#include "seller.h"
-#include "buyer.h"
-#include "Merchant.h"
+
+
 
 
 using namespace std;
@@ -14,11 +12,30 @@ using namespace std;
 
 int main()
 {
+	MER Market;
+	BUYER YG(20000, 0);
+	for (int i = 0; i < 10; i++)
+	{
+		Market.Add(new SELLER(i*100, i*10));
+	}
+	
+	YG.info();
 
+	for (int i = 0; i < 40; i++)
+	{
+		YG.buy(10, Market);
+
+		YG.info();
+
+	}
+	
+	/*
 	using namespace std;
-	MER *C = new MER(10000, 10, 10000);// 상인 : 재산:10000원, 가격:개당10원,  재고 10000개
+	MER *C = new MER(10000, 10000, 10);// 상인 : 재산:10000원, 가격:개당10원,  재고 10000개
 	SELLER *A = new SELLER(1000, 1000);// 셀러 : 재산:1000원, 재고: 1000개
 	BUYER *B = new BUYER(4000, 20);// 바이어 : 재산 4000원, 재고 20개
+
+
 
 	int i = 0;
 	int a=0, b=0;
@@ -47,5 +64,5 @@ int main()
 	delete[] A;//메모리 삭제
 	delete[] B;//메모리 삭제
 	delete[] C;//메모리 삭제
-
+	*/
 }
